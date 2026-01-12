@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>
+            Podaj liczbe
+            <input type="number" id="num"><button id="myButton">Wyslij</button>
+        </label>
+    </form>
+    <p id="info"></p>
+    <script>
+        document.querySelector("#myButton").addEventListener("click",function(e){
+            e.preventDefault();
+            const MIN=0; const MAX=10; var result;
+            var number=document.querySelector("#num").value;
+            if(number!="" && number>=MIN && number<=MAX){
+                result="Dane poprawne";
+            }else{
+                result="Dane niepoprawne";
+            }
+            document.querySelector("#info").innerHTML= result;
+        });
+    </script>
+</body>
+</html>
