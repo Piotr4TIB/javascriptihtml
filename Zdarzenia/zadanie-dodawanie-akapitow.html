@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie ŁT4TIB</title>
+</head>
+<body>
+    <button id="przycisk">Dodaj następny Akapit</button>
+    <p id="liczba"></p>
+    <script>
+        let przycisk = document.querySelector("#przycisk");
+        let licznik = 0
+        let akapit = "Akapit "
+        przycisk.addEventListener("click", dodajparagraf)
+        function dodajparagraf(){
+            licznik++;
+            document.querySelector("#liczba").innerHTML += akapit + licznik + "<br>";
+        }
+       
+    </script>
+
+
+</body>
+</html>
