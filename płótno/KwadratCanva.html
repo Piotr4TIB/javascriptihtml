@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwadrat</title>
+</head>
+<body>
+    <canvas width="400" height="400" id="canvas"></canvas>
+    <script>
+        const canvas = document.querySelector("#canvas");
+        const ctx =canvas.getContext("2d");
+
+        ctx.beginPath(); //rozpoczęcie nowej ścieżki
+        ctx.moveTo(20,20);
+        ctx.lineTo(80,20);
+        ctx.lineTo(80,80);
+        ctx.lineTo(20,80);
+        ctx.lineTo(20,20);
+        ctx.stroke();
+    </script>
+</body>
+</html>

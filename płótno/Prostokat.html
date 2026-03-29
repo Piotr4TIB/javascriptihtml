@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prostokąt</title>
+</head>
+<body>
+    <canvas width="400" height="200" id="canvas"></canvas>
+    <script>
+        const canvas = document.querySelector("#canvas");
+        const ctx =canvas.getContext("2d");
+
+        ctx.beginPath(); //rozpoczęcie nowej ścieżki
+        ctx.moveTo(20,20);
+        // a filled rectangle
+        ctx.fillRect(25,25,100,100);
+        //fully transparent
+        ctx.clearRect(45,45,60,60);
+        //a rectangular outline
+        ctx.strokeRect(50,50,50,50);
+    </script>
+</body>
+</html>

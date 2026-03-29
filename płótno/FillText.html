@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing text - fillText</title>
+</head>
+<body>
+    <canvas width="400" height="400" id="canvas"></canvas>
+    <script>
+        const canvas = document.querySelector("#canvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.font = "48px serif";
+        ctx.fillText("Hello world", 10, 50);
+    </script>
+</body>
+</html>

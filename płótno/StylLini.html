@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styl lini setLineDash( pattern ) </title>
+</head>
+<body>
+    <canvas width="400" height="400" id="canvas"></canvas>
+    <script>
+        const canvas = document.querySelector("#canvas");
+        const ctx =canvas.getContext("2d");
+        function drawDashedLine(pattern){
+            ctx.beginPath();
+            ctx.setLineDash(pattern);
+            ctx.moveTo(0,y);
+            ctx.lineTo(300,y);
+            ctx.stroke();
+            y += 20;
+            let y = 15;
+            drawDashedLine([]);
+            drawDashedLine([1, 1]);
+            drawDashedLine([10,10]);
+            drawDashedLine([20,5]);
+            drawDashedLine([15,3,3,3]);
+            drawDashedLine([20,3,3,3,3,3,3,3]);
+            drawDashedLine([12,3,3]); // Equals [12,3,3,12,3,3]
+
+        }
+    </script>
+</body>
+</html>

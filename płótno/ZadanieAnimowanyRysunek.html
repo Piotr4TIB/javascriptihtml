@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacja Canvas</title>
+</head>
+<body>
+<canvas id="canvas" width="1600" height="700"></canvas>
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Pozycja
+    let x = 100, y = 100;
+    let dx = 4, dy = 4;
+    let angle = 0;
+    const radius = 50;
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.setLineDash([5, 15]);
+        ctx.lineWidth = 2; 
+        ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+        // Gradient
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+        gradient.addColorStop(0, "red");
+        gradient.addColorStop(0.2, "orange");
+        gradient.addColorStop(0.4, "yellow");
+        gradient.addColorStop(0.5, "Lime");
+        gradient.addColorStop(0.6, "Green");
+        gradient.addColorStop(0.7, "Blue");
+        gradient.addColorStop(0.8, "Cyan");
+        gradient.addColorStop(0.9, "Pink");
+        gradient.addColorStop(1,"Purple");
+
+        // Tekst 
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = 2;
+        ctx.shadowBlur = 2;
+        ctx.shadowColor = "black";
+        ctx.font = "30px Arial";
+        ctx.fillStyle = gradient;
+        ctx.fillText("Łukasz Targosz", 50, 60);
+
+        // Kolo
+        ctx.save(); 
+        ctx.translate(x, y); 
+        ctx.rotate(angle);
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, Math.PI * 3); // arc
+        
+        // Zmiana koloru wypełnienia zależna od pozycji
+        const odcien = (x + y) % 360;
+        ctx.fillStyle = `hsl(${odcien}, 50%, 50%)`;
+        ctx.fill();
+        
+        // Napis w kole
+        ctx.fillStyle = "white";
+        ctx.font = "13px serif";
+        ctx.fillText("Ł.T-4TIB", 1, 1);
+        
+        // Żeby się koło odbijało
+        ctx.restore();
+        if (x + radius > canvas.width || x - radius < 0) dx = -dx;
+        if (y + radius > canvas.height || y - radius < 0) dy = -dy;
+
+        x += dx;
+        y += dy;
+        angle += 0.05;
+
+        requestAnimationFrame(draw);
+    }
+
+    draw();
+</script>
+</body>
+</html>
