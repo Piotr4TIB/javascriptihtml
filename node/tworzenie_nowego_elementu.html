@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tworzenie nowego elementu HTML</h1>   
+</body>
+<script>
+    //tworzenie nowego elementu paragrafu 
+    let newElement = document.createElement("p");
+    //dodanie zawartości (content) do nowego elementu
+    newElement.textContent = "To jest nowy paragraf";
+    //dodanie nowego elementu do "ciała" dokumentu
+    document.body.appendChild(newElement);
+    let naglowek = document.createElement("h2");
+    naglowek.textContent = "Łukasz Targosz";
+    document.body.appendChild(naglowek);
+
+</script>
+</html>
