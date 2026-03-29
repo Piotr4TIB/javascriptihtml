@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyszukiwanie nazwy pliku gif</title>
+</head>
+<body>
+    <h1>Wyszukiwanie elementu obrazka *.gif</h1>
+    <script>
+        let tekst = "ikona jest w logo.gif";
+        let wzorzec = /\S*\.gif/i;
+        let position = tekst.search( wzorzec )
+        document.write( tekst.slice(position));
+    </script>
+</body>
+</html>
